@@ -1,11 +1,12 @@
 import React from "react";
-import { SiReact } from "react-icons/si";
+import { SiReact, SiNextdotjs } from "react-icons/si";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "./workExp.css";
+
 const WorkExp = () => {
   return (
     <>
@@ -16,33 +17,58 @@ const WorkExp = () => {
           </h2>
           <hr />
           <VerticalTimeline lineColor="#1e1e2c">
+            {/* InterviewEasy – Freelance Full Stack Developer */}
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{ background: "white", color: "#1e1e2c" }}
-              contentArrowStyle={{
-                borderRight: "7px solid  white",
-              }}
-              date="12-2024 - 02-2025"
+              contentArrowStyle={{ borderRight: "7px solid  white" }}
+              date="07-2025 - 08-2025"
+              iconStyle={{ background: "#1e1e2c", color: "#fff" }}
+              icon={<SiNextdotjs />}
+            >
+              <h3 className="vertical-timeline-element-title">
+                Freelance Full Stack Developer
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">
+                InterviewEasy – DSA Learning Platform
+              </h4>
+              <p>
+                Built a production-grade Next.js + Supabase platform in a 3-member team.
+                Implemented Supabase Auth (email & Google) with JWT sessions, integrated
+                Razorpay for premium sheet purchases, and used Resend for transactional
+                emails. Deployed with SEO, mobile responsiveness, and analytics via Google
+                Analytics/AdSense. Showcased on the live site’s About Us page.
+              </p>
+            </VerticalTimelineElement>
+
+            {/* Twin Tring – Frontend Developer */}
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{ background: "white", color: "#1e1e2c" }}
+              contentArrowStyle={{ borderRight: "7px solid  white" }}
+              date="04-2025 - 06-2025"
               iconStyle={{ background: "#1e1e2c", color: "#fff" }}
               icon={<SiReact />}
             >
               <h3 className="vertical-timeline-element-title">
-                    Web Designer Intern
+                Frontend Developer
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
-                    Copperpod IP
+                Twin Tring (Cycle Rental Service), Mumbai — Remote
               </h4>
               <p>
-                    Designed and developed responsive, user-friendly websites, enhancing Copperpod IP’s digital presence with a seamless
-                    cross-platform experience.Optimized website performance, accessibility, and functionality, ensuring a smooth and interactive user experience. Collaborated with designers and developers to integrate visually appealing, brand-aligned design elements. Maintained and updated website content, ensuring accuracy, consistency, and optimal digital representation
-                    </p>
+                Built the official website (React + Tailwind CSS) from scratch in a team of two.
+                Implemented rental booking, service requests, feedback, and contact flows.
+                Ensured responsive, fast-loading UI and collaborated with backend teams to
+                integrate APIs and maintain cross-browser/device compatibility.
+              </p>
             </VerticalTimelineElement>
+
+            {/* Edunet Foundation – Full Stack Developer */}
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{ background: "white", color: "#1e1e2c" }}
-              contentArrowStyle={{
-                borderRight: "7px solid  white",
-              }}
+              contentArrowStyle={{ borderRight: "7px solid  white" }}
               date="10-2024 - 12-2024"
               iconStyle={{ background: "#1e1e2c", color: "#fff" }}
               icon={<SiReact />}
@@ -54,8 +80,12 @@ const WorkExp = () => {
                 Edunet Foundation
               </h4>
               <p>
-                Design a user-friendly e-commerce website for Edunet Foundation, a non-profit organization that provides educational resources to underprivileged children.
-                Developed a responsive, mobile-first website using React, Node.js, and MongoDB, ensuring optimal performance and cross-platform compatibility. Integrated secure payment gateways and user authentication features, enhancing website functionality and user experience. Collaborated with a team of developers and designers to implement new features and resolve technical issues, ensuring project milestones and deadlines were met.
+                Designed a user-friendly e-commerce website for Edunet Foundation, a
+                non-profit organization. Built using React, Node.js, and MongoDB with
+                mobile-first responsive design. Integrated secure payment gateways and
+                user authentication features, ensuring smooth cross-platform performance.
+                Collaborated with designers and developers to deliver new features and
+                resolve issues while meeting project deadlines.
               </p>
             </VerticalTimelineElement>
           </VerticalTimeline>
