@@ -1,49 +1,34 @@
-.work {
-    background-color: #1387812a;
-    margin-left: 140px;
-  }
-  
-  .work-exp {
-    padding: 60px 0px;
-  }
-  
-  .work-exp h2 {
-    font-weight: bold;
-    color: #1e1e2c;
-  }
-  
-  .work-exp hr {
-    color: #138781;
-    width: 400px;
-    margin: 10px auto;
-  }
-  
-  .work-exp .vertical-timeline-element-title {
-    color: #138781;
-  }
-  
-  .work-exp .vertical-timeline-element-subtitle {
-    color: #1e1e2c78;
-  }
-  
-  /* ===== DARK MODE ========== */
-  #dark .work {
-    background-color: #643a6b;
-  }
-  
-  #dark .work-exp h2 {
-    color: white;
-  }
-  
-  /* =================== */
-  
-  @media (max-width: 600px) {
-    .work {
-      margin: 0;
-      padding: 0;
-      margin-top: 50px;
-    }
-    .work hr {
-      width: 280px;
-    }
-  }
+.work-section {
+  width: 100%;
+}
+
+.timeline-container {
+  padding: 1rem 0;
+}
+
+.timeline-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  color: var(--text-secondary) !important;
+  margin-top: 0.5rem !important;
+}
+
+.vertical-timeline-element-title {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+}
+
+.vertical-timeline-element-subtitle {
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.25rem;
+}
+
+/* Theme adaptation for date tag text */
+.vertical-timeline-element-date {
+  color: var(--text-muted) !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+}

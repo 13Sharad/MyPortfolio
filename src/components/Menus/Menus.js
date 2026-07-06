@@ -1,212 +1,86 @@
 import React from "react";
 import "./Menus.css";
-// import Zoom from "react-reveal/Zoom";
-// import Fade from "react-reveal/Fade";
 import { Link } from "react-scroll";
-import {
-  FcAbout,
-  FcBiotech,
-  FcBusinessContact,
-  FcHome,
-  FcPortraitMode,
-  FcReadingEbook,
-  FcVideoProjector,
-} from "react-icons/fc";
+import { 
+  FiHome, 
+  FiUser, 
+  FiBookOpen, 
+  FiCpu, 
+  FiFolder, 
+  FiBriefcase, 
+  FiMail 
+} from "react-icons/fi";
 import Photo from './photo1.jpg';
+
 const Menus = ({ toggle }) => {
+  const menuItems = [
+    { target: "home", label: "Home", icon: FiHome },
+    { target: "about", label: "About", icon: FiUser },
+    { target: "education", label: "Education", icon: FiBookOpen },
+    { target: "techstack", label: "Tech Stack", icon: FiCpu },
+    { target: "projects", label: "Projects", icon: FiFolder },
+    { target: "work", label: "Work Experience", icon: FiBriefcase },
+    { target: "contact", label: "Contact", icon: FiMail },
+  ];
+
   return (
-    <>
+    <div className="menus-container">
       {toggle ? (
         <>
-          {/* <Zoom> */}
-            <div className="navbar-profile-pic">
-              <img
-                src={Photo}
-                alt="profile pic"
-              />
+          <div className="profile-section">
+            <div className="profile-pic-wrapper">
+              <img src={Photo} alt="Sharad Singh" className="profile-pic" />
             </div>
-          {/* </Zoom> */}
-          {/* <Fade left> */}
-            <div className="nav-items">
-              <div className="nav-item">
-                <div className="nav-link">
+            <h3 className="profile-name">Sharad Singh</h3>
+            <p className="profile-title">Full-Stack Developer</p>
+          </div>
+          
+          <nav className="nav-menu">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div className="nav-item" key={item.target}>
                   <Link
-                    to="home"
+                    to={item.target}
                     spy={true}
                     smooth={true}
-                    offset={-100}
-                    duration={100}
+                    offset={-80}
+                    duration={300}
+                    activeClass="active"
+                    className="nav-link-custom"
                   >
-                    <FcHome />
-                    Home
+                    <Icon size={18} className="menu-icon" />
+                    <span className="menu-label">{item.label}</span>
                   </Link>
                 </div>
-                <div className="nav-link">
-                  <Link
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcAbout />
-                    About
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="education"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcReadingEbook />
-                    Education
-                  </Link>
-                </div>
-
-                <div className="nav-link">
-                  <Link
-                    to="techstack"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcBiotech />
-                    Tech Stack
-                  </Link>
-                </div>
-
-                <div className="nav-link">
-                  <Link
-                    to="projects"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcVideoProjector />
-                    Projects
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="work"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcPortraitMode />
-                    Work Experince
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                  >
-                    <FcBusinessContact />
-                    Contact
-                  </Link>
-                </div>
-              </div>
-            </div>
-          {/* </Fade> */}
+              );
+            })}
+          </nav>
         </>
       ) : (
-        <>
-          <div className="nav-items">
-            <div className="nav-item">
-              <div className="nav-link">
+        <nav className="nav-menu collapsed">
+          {menuItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div className="nav-item" key={item.target}>
                 <Link
-                  to="home"
+                  to={item.target}
                   spy={true}
                   smooth={true}
-                  offset={-100}
-                  duration={100}
+                  offset={-80}
+                  duration={300}
+                  activeClass="active"
+                  className="nav-link-custom collapsed-link"
+                  title={item.label}
                 >
-                  <FcHome />
+                  <Icon size={20} className="menu-icon" />
                 </Link>
               </div>
-              <div className="nav-link">
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcAbout />
-                </Link>
-              </div>
-              <div className="nav-link">
-                <Link
-                  to="education"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcReadingEbook />
-                </Link>
-              </div>
-
-              <div className="nav-link">
-                <Link
-                  to="techstack"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcBiotech />
-                </Link>
-              </div>
-
-              <div className="nav-link">
-                <Link
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcVideoProjector />
-                </Link>
-              </div>
-              <div className="nav-link">
-                <Link
-                  to="work"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcPortraitMode />
-                </Link>
-              </div>
-              <div className="nav-link">
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={100}
-                >
-                  <FcBusinessContact />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </>
+            );
+          })}
+        </nav>
       )}
-    </>
+    </div>
   );
 };
 

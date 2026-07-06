@@ -2,151 +2,83 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { Link } from "react-scroll";
-import {
-  FcAbout,
-  FcBiotech,
-  FcBusinessContact,
-  FcHome,
-  FcPortraitMode,
-  FcReadingEbook,
-  FcVideoProjector,
-} from "react-icons/fc";
+import { 
+  FiHome, 
+  FiUser, 
+  FiBookOpen, 
+  FiCpu, 
+  FiFolder, 
+  FiBriefcase, 
+  FiMail 
+} from "react-icons/fi";
 import "./MobileNav.css";
+
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
 
-  //handle open
   const handleOpen = () => {
     setOpen(!open);
   };
 
-  // handle menu clicks
   const handleMenuClick = () => {
     setOpen(false);
   };
+
+  const menuItems = [
+    { target: "home", label: "Home", icon: FiHome },
+    { target: "about", label: "About", icon: FiUser },
+    { target: "education", label: "Education", icon: FiBookOpen },
+    { target: "techstack", label: "Tech Stack", icon: FiCpu },
+    { target: "projects", label: "Projects", icon: FiFolder },
+    { target: "work", label: "Work Experience", icon: FiBriefcase },
+    { target: "contact", label: "Contact", icon: FiMail },
+  ];
+
   return (
-    <>
-      <div className="mobile-nav">
-        <div className="mobile-nav-header">
-          {open ? (
-            <AiOutlineMenuFold
-              size={30}
-              className="mobile-nav-icon"
-              onClick={handleOpen}
-            />
-          ) : (
-            <GiHamburgerMenu
-              size={30}
-              className="mobile-nav-icon"
-              onClick={handleOpen}
-            />
-          )}
-
-          <span className="mobile-nav-title">My Portfolio</span>
-        </div>
-        {open && (
-          <div className="mobile-nav-menu">
-            <div className="nav-items">
-              <div className="nav-item">
-                <div className="nav-link">
-                  <Link
-                    to="home"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcHome />
-                    Home
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcAbout />
-                    About
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="education"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcReadingEbook />
-                    Education
-                  </Link>
-                </div>
-
-                <div className="nav-link">
-                  <Link
-                    to="techstack"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcBiotech />
-                    Tech Stack
-                  </Link>
-                </div>
-
-                <div className="nav-link">
-                  <Link
-                    to="projects"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcVideoProjector />
-                    Projects
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="work"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcPortraitMode />
-                    Work Experince
-                  </Link>
-                </div>
-                <div className="nav-link">
-                  <Link
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={100}
-                    onClick={handleMenuClick}
-                  >
-                    <FcBusinessContact />
-                    Contact
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="mobile-nav glass-panel">
+      <div className="mobile-nav-header">
+        {open ? (
+          <AiOutlineMenuFold
+            size={26}
+            className="mobile-nav-icon"
+            onClick={handleOpen}
+          />
+        ) : (
+          <GiHamburgerMenu
+            size={26}
+            className="mobile-nav-icon"
+            onClick={handleOpen}
+          />
         )}
+        <span className="mobile-nav-title">Sharad Singh</span>
       </div>
-    </>
+      
+      {open && (
+        <div className="mobile-nav-menu glass-panel">
+          <nav className="mobile-nav-links">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.target}
+                  to={item.target}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={300}
+                  activeClass="active"
+                  className="mobile-nav-link"
+                  onClick={handleMenuClick}
+                >
+                  <Icon size={18} />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      )}
+    </div>
   );
 };
 

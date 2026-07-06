@@ -1,32 +1,22 @@
-import React, {useState} from 'react'
-import Home from '../../pages/Home/Home'
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight, iOutlineDoubleRight  } from "react-icons/ai";
+import React from 'react'
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import './Layout.css'
 import Menus from '../Menus/Menus';
-const Layout = () => {
-    const [toggle, setToggle] = useState(true);
-    // change toggle
-    const handleToggle = () =>{
-        setToggle(!toggle);
-    }
+
+const Layout = ({ toggle, handleToggle }) => {
   return (
-    <>
-      <div className="sidebar-section">
-        <div className={toggle? "sidebar-toggle sidebar":"sidebar"}>
-            <div className="sidebar-toggle-icons">
-            <p onClick={handleToggle}>
-                {
-                    toggle ? (<AiOutlineDoubleLeft size={30} />): (<AiOutlineDoubleRight size={30} />)
-                }
-            </p>        
-            </div>
-            <Menus toggle={toggle} />
-        </div>
-        <div className="container">
-            <Home />
-        </div>
+    <div className={`sidebar ${toggle ? 'expanded' : ''}`}>
+      <div className="sidebar-toggle-icons">
+        <p onClick={handleToggle}>
+          {toggle ? (
+            <AiOutlineDoubleLeft size={24} />
+          ) : (
+            <AiOutlineDoubleRight size={24} />
+          )}
+        </p>
       </div>
-    </>
+      <Menus toggle={toggle} />
+    </div>
   )
 }
 
