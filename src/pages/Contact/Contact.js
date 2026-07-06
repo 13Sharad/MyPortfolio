@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import "./Contact.css";
-import { FiLinkedin, FiGithub, FiInstagram, FiMail, FiMapPin, FiSend } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 
 const Contact = () => {
   const [name, setname] = useState("");
@@ -92,15 +92,6 @@ const Contact = () => {
                   title="GitHub"
                 >
                   <FiGithub size={20} />
-                </a>
-                <a
-                  href="https://www.instagram.com/13_sharad_/?utm_source=qr&igsh=djAwcnI1Y3NuYzNn#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon-btn"
-                  title="Instagram"
-                >
-                  <FiInstagram size={20} />
                 </a>
               </div>
             </div>
