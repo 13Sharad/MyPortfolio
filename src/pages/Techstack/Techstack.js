@@ -1,43 +1,29 @@
 import React from "react";
 import "./Techstack.css";
-// import RubberBand from "react-reveal/RubberBand";
-// import Fade from "react-reveal/Fade";
 import { TechstackList } from "../../utils/TechstackList";
+
 const Techstack = () => {
   return (
     <>
-      <div className="container techstack" id="techstack">
-        {/* <RubberBand> */}
-          <h2 className="col-12 mt-3 mb-1 text-center text-uppercase">
-            Technologies Stack
-          </h2>
-          <hr />
-          <p className="pb-3 text-center">
-            👉 including programming Languages, frameworks, databses, front-end
-            and back-end tools, and APIs
-          </p>
-        {/* </RubberBand> */}
-        <div className="row">
-          {TechstackList.map((tech) => (
-            // <Fade left>
-              <div key={tech._id} className="col-md-3">
-                <div className="card m-2">
-                  <div className="card-content">
-                    <div className="card-body">
-                      <div className="media d-flex justify-content-center">
-                        <div className="alig-self-center">
-                          <tech.icon className="tech-icon" />
-                        </div>
-                        <div className="media-body">
-                          <h5>{tech.name}</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <div className="techstack-section" id="techstack">
+        <h2 className="section-title">TECHNOLOGY STACK</h2>
+        <div className="section-divider"></div>
+        <p className="section-subtitle">
+          Languages, frameworks, databases, and development tools I use regularly
+        </p>
+        
+        <div className="tech-grid">
+          {TechstackList.map((tech) => {
+            const Icon = tech.icon;
+            return (
+              <div key={tech._id} className="tech-card glass-panel">
+                <div className="tech-card-content">
+                  <Icon className="tech-icon" />
+                  <h5 className="tech-name">{tech.name}</h5>
                 </div>
               </div>
-            // </Fade>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>

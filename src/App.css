@@ -1,0 +1,36 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* clean spacing between sections */
+}
+
+.main-content.sidebar-expanded {
+  padding-left: calc(260px + 2rem);
+}
+
+.main-content.sidebar-collapsed {
+  padding-left: calc(80px + 2rem);
+}
+
+/* ==== RESPONSIVE VIEW ========== */
+@media (max-width: 768px) {
+  .main-content.sidebar-expanded,
+  .main-content.sidebar-collapsed {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 5.5rem; /* spacing for top navigation bar */
+    gap: 3rem;
+  }
+}
