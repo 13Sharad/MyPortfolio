@@ -28,7 +28,7 @@ const About = () => {
               I am currently pursuing my Bachelor's degree in Information Technology from <strong>Haldia Institute of Technology</strong> (2022 - 2026). Originally from Vaishali, Bihar, I'm currently active in full-stack engineering and freelance website development.
             </p>
             <p className="about-paragraph">
-              With a strong base in Data Structures, Algorithms, and C++, I build scalable applications using React, Next.js, Node.js, Express, MongoDB, and Tailwind CSS. I have experience building full-stack products, cooperating in teams of up to 3 developers, and delivering clean, production-grade solutions for freelance clients.
+              With a strong base in Data Structures, Algorithms, and C++, I build scalable applications using React, Next.js, Node.js, Express, MongoDB, and Tailwind CSS. I have completed several projects using these technologies, such as CodePlay-Hub and GoShopEase-Website. I also have hands-on experience as a Freelance Full Stack Developer, collaborating in teams of up to 3 developers to deliver responsive, user-friendly websites.
             </p>
 
             <div className="about-quick-cards">
@@ -50,7 +50,7 @@ const About = () => {
             </div>
             
             <p className="about-paragraph strengths-intro">
-              My core strengths include writing clean, modular code, executing fast debugging cycles, and communicating clearly in collaborative settings.
+              My core strengths include strong communication skills, adaptability, a hardworking nature, and the ability to work well within a team. In my free time, I enjoy playing cricket, listening to music, and watching podcasts.
             </p>
           </div>
         </div>
